@@ -1,0 +1,96 @@
+body {
+    perspective: 800px;
+    background: url('./src/background/wallpaper3.webp') no-repeat bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out;
+}
+
+html {
+    overflow: hidden;
+}
+
+#black-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 50%;
+    position: absolute;
+    z-index: -1;
+    transition: opacity 0.8s;
+}
+
+.movies-container {
+    display: flex;
+    flex-direction: row;
+    z-index: 0;
+}
+
+.main-title {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.185);
+    transition: color 1s;
+}
+
+.movies-container:hover .wrapper-item {
+    opacity: 0.3;
+}
+
+.movies-container:hover .main-title {
+    color: rgb(189, 189, 189);
+}
+
+.movies-container .wrapper-item:hover {
+    opacity: 1;
+    transform: rotateX(20deg) scale(1.8);
+    z-index: 10;
+}
+
+.wrapper-item:hover .movie-img {
+    box-shadow: 0 0 50px -20px rgb(255, 255, 255);
+}
+
+
+/* .movies-container:hover {} */
+
+.wrapper-item {
+    background-color: bluevioletS;
+    transition: 1s;
+    animation-name: CARDupDown;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes CARDupDown {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 60px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+.movie-img {
+    display: block;
+    width: 140px;
+    margin: auto;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid white;
+    transition-property: transform;
+    transition-duration: 0.8s;
+    box-shadow: 0 0 100px -20px rgb(255, 255, 255);
+}
